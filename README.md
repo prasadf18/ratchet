@@ -23,7 +23,7 @@ Work in progress. Building in this order:
 - [x] Agent loop with checkpoint and replay
 - [x] Idempotent tool calls (and a simulated outside system to test them against)
 - [x] LLM gateway (rate limit, retry with backoff and jitter, circuit breaker)
-- [ ] Chaos harness (random `kill -9`)
+- [x] Chaos harness (random `kill -9`, real worker processes)
 - [ ] Benchmarks
 - [ ] API
 
