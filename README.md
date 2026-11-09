@@ -25,7 +25,7 @@ Work in progress. Building in this order:
 - [x] LLM gateway (rate limit, retry with backoff and jitter, circuit breaker)
 - [x] Chaos harness (random `kill -9`, real worker processes)
 - [x] Benchmarks (raw results are in bench/results and chaos/results)
-- [ ] API
+- [x] API (FastAPI: POST /runs with an Idempotency-Key, GET /runs/{id})
 
 ## Running it
 
