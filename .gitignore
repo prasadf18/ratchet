@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# local dev database (see scripts/dev_db.py)
+.pgdata/
+
+# benchmark and chaos output
+bench/results/
+chaos/results/

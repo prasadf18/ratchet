@@ -1,0 +1,23 @@
+[project]
+name = "ratchet"
+version = "0.1.0"
+description = "A durable runtime for AI agents: crash a worker, lose nothing, repeat nothing."
+requires-python = ">=3.11"
+dependencies = [
+    "psycopg[binary]>=3.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
