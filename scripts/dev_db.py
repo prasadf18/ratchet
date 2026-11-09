@@ -36,6 +36,20 @@ def run(tool: str, *args: str, check: bool = True) -> subprocess.CompletedProces
     return subprocess.run([exe, *args], check=check, capture_output=True, text=True)
 
 
+def start_server() -> None:
+    # pg_ctl leaves the server running in the background and the server inherits
+    # our stdout. If we capture it, subprocess waits forever for the pipe to close,
+    # so send the output to the log file instead.
+    exe = str(pg_bin() / "pg_ctl")
+    subprocess.run(
+        [exe, "-D", str(DATA), "-o", f"-p {PORT}", "-l", str(DATA / "server.log"), "-w", "start"],
+        check=True,
+        stdin=subprocess.DEVNULL,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+
+
 def is_running() -> bool:
     return run("pg_ctl", "-D", str(DATA), "status", check=False).returncode == 0
 
@@ -47,7 +61,7 @@ def start() -> None:
     if is_running():
         print("already running")
     else:
-        run("pg_ctl", "-D", str(DATA), "-o", f"-p {PORT}", "-l", str(DATA / "server.log"), "-w", "start")
+        start_server()
         print(f"started on port {PORT}")
     existing = run("psql", "-h", "localhost", "-p", PORT, "-U", USER, "-d", "postgres", "-tAc",
                    "SELECT datname FROM pg_database").stdout.split()
