@@ -201,4 +201,4 @@ docs/           the architecture diagram (PNG and editable Excalidraw)
 
 ## License
 
-None chosen yet, so all rights are reserved by default.
+[MIT](LICENSE). You can use, copy, modify and share this code, including commercially, as long as the license notice stays with it.

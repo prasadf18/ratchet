@@ -3,6 +3,7 @@ name = "ratchet"
 version = "0.1.0"
 description = "A durable runtime for AI agents: crash a worker, lose nothing, repeat nothing."
 requires-python = ">=3.11"
+license = { text = "MIT" }
 dependencies = [
     "psycopg[binary]>=3.2",
     "fastapi>=0.110",
