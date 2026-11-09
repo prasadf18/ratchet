@@ -24,7 +24,7 @@ Work in progress. Building in this order:
 - [x] Idempotent tool calls (and a simulated outside system to test them against)
 - [x] LLM gateway (rate limit, retry with backoff and jitter, circuit breaker)
 - [x] Chaos harness (random `kill -9`, real worker processes)
-- [ ] Benchmarks
+- [x] Benchmarks (raw results are in bench/results and chaos/results)
 - [ ] API
 
 ## Running it

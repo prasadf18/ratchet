@@ -7,6 +7,3 @@ __pycache__/
 # local dev database (see scripts/dev_db.py)
 .pgdata/
 
-# benchmark and chaos output
-bench/results/
-chaos/results/

@@ -1,0 +1,38 @@
+[
+  {
+    "workers": 4,
+    "offered_runs_per_sec": 150.0,
+    "runs": 900,
+    "done": 900,
+    "throughput_runs_per_sec": 43.3,
+    "latency_p50_ms": 7680,
+    "latency_p99_ms": 14614
+  },
+  {
+    "workers": 8,
+    "offered_runs_per_sec": 150.0,
+    "runs": 900,
+    "done": 900,
+    "throughput_runs_per_sec": 62.9,
+    "latency_p50_ms": 4422,
+    "latency_p99_ms": 8255
+  },
+  {
+    "workers": 12,
+    "offered_runs_per_sec": 150.0,
+    "runs": 900,
+    "done": 900,
+    "throughput_runs_per_sec": 65.7,
+    "latency_p50_ms": 4142,
+    "latency_p99_ms": 7617
+  },
+  {
+    "workers": 16,
+    "offered_runs_per_sec": 150.0,
+    "runs": 900,
+    "done": 900,
+    "throughput_runs_per_sec": 32.5,
+    "latency_p50_ms": 8595,
+    "latency_p99_ms": 21153
+  }
+]

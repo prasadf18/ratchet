@@ -1,0 +1,34 @@
+[
+  {
+    "idempotency_keys": true,
+    "seed": 15,
+    "runs": 100,
+    "rounds_per_run": 4,
+    "workers": 4,
+    "worker_kills": 22,
+    "seconds": 8.75,
+    "runs_done": 100,
+    "lost_runs": 0,
+    "effects_expected": 400,
+    "effects_total": 400,
+    "duplicate_effects": 0,
+    "missing_effects": 0,
+    "retries": 13
+  },
+  {
+    "idempotency_keys": false,
+    "seed": 15,
+    "runs": 100,
+    "rounds_per_run": 4,
+    "workers": 4,
+    "worker_kills": 22,
+    "seconds": 8.96,
+    "runs_done": 100,
+    "lost_runs": 0,
+    "effects_expected": 400,
+    "effects_total": 405,
+    "duplicate_effects": 5,
+    "missing_effects": 0,
+    "retries": 14
+  }
+]

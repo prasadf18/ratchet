@@ -1,0 +1,22 @@
+[
+  {
+    "mode": "skip_locked",
+    "threads": 8,
+    "jobs": 3000,
+    "claims": 3000,
+    "conflicts": 0,
+    "seconds": 0.68,
+    "claims_per_sec": 4380,
+    "repeats": 3
+  },
+  {
+    "mode": "naive",
+    "threads": 8,
+    "jobs": 3000,
+    "claims": 3000,
+    "conflicts": 19458,
+    "seconds": 9.96,
+    "claims_per_sec": 301,
+    "repeats": 3
+  }
+]
