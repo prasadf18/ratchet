@@ -17,6 +17,6 @@ def dsn():
 def conn(dsn):
     """A connection to an empty database."""
     c = db.connect(dsn)
-    c.execute("TRUNCATE dead_letters, idempotency_keys, steps, jobs, runs RESTART IDENTITY CASCADE")
+    c.execute("TRUNCATE external_effects, dead_letters, idempotency_keys, steps, jobs, runs RESTART IDENTITY CASCADE")
     yield c
     c.close()

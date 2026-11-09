@@ -125,6 +125,20 @@ def fail(conn: psycopg.Connection, claim: Claim, error: str, retry_in: float = 0
         raise LeaseLost(f"job {claim.job_id} attempt {claim.attempt}")
 
 
+def assert_lease(conn: psycopg.Connection, claim: Claim) -> None:
+    """Raise LeaseLost unless this attempt still holds the job.
+
+    A cheap early check, not a guarantee: the lease can still be lost a moment
+    after it returns. The writes that matter (record_step, complete) check again.
+    """
+    row = conn.execute(
+        "SELECT 1 FROM jobs WHERE id = %s AND attempt = %s AND state = 'leased'",
+        (claim.job_id, claim.attempt),
+    ).fetchone()
+    if row is None:
+        raise LeaseLost(f"job {claim.job_id} attempt {claim.attempt}")
+
+
 def record_step(conn: psycopg.Connection, claim: Claim, seq: int, kind: str,
                 input: dict | None, output: dict | None) -> bool:
     """Append a finished step to the checkpoint log.

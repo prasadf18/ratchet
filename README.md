@@ -21,7 +21,7 @@ Work in progress. Building in this order:
 - [x] Queue with leases and a fencing token (11 tests, including a stale-worker case)
 - [x] Worker loop and heartbeat
 - [ ] Agent loop with checkpoint and replay
-- [ ] Idempotent tool calls
+- [x] Idempotent tool calls (and a simulated outside system to test them against)
 - [ ] LLM gateway (rate limit, retry with backoff and jitter)
 - [ ] Chaos harness (random `kill -9`)
 - [ ] Benchmarks
