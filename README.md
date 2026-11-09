@@ -19,7 +19,7 @@ Work in progress. Building in this order:
 - [x] Project skeleton and a throwaway local Postgres
 - [x] Schema: runs, jobs, steps, idempotency keys, dead letters
 - [x] Queue with leases and a fencing token (11 tests, including a stale-worker case)
-- [ ] Worker loop and heartbeat
+- [x] Worker loop and heartbeat
 - [ ] Agent loop with checkpoint and replay
 - [ ] Idempotent tool calls
 - [ ] LLM gateway (rate limit, retry with backoff and jitter)
