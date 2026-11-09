@@ -20,7 +20,7 @@ Work in progress. Building in this order:
 - [x] Schema: runs, jobs, steps, idempotency keys, dead letters
 - [x] Queue with leases and a fencing token (11 tests, including a stale-worker case)
 - [x] Worker loop and heartbeat
-- [ ] Agent loop with checkpoint and replay
+- [x] Agent loop with checkpoint and replay
 - [x] Idempotent tool calls (and a simulated outside system to test them against)
 - [x] LLM gateway (rate limit, retry with backoff and jitter, circuit breaker)
 - [ ] Chaos harness (random `kill -9`)
