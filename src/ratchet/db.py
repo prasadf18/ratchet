@@ -6,9 +6,13 @@ from psycopg.rows import dict_row
 SQL_DIR = Path(__file__).resolve().parent.parent.parent / "sql"
 
 
-def connect(dsn: str) -> psycopg.Connection:
-    """Open a connection that returns rows as dicts."""
-    return psycopg.connect(dsn, row_factory=dict_row)
+def connect(dsn: str, autocommit: bool = True) -> psycopg.Connection:
+    """Open a connection that returns rows as dicts.
+
+    Autocommit is on by default: the queue code opens its own transactions with
+    `conn.transaction()` where it needs several statements to succeed together.
+    """
+    return psycopg.connect(dsn, row_factory=dict_row, autocommit=autocommit)
 
 
 def migrate(conn: psycopg.Connection) -> list[str]:

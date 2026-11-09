@@ -17,8 +17,8 @@ The honest version of the guarantee: **at-least-once delivery + idempotency + fe
 Work in progress. Building in this order:
 
 - [x] Project skeleton and a throwaway local Postgres
-- [ ] Schema: runs, jobs, steps, idempotency keys, dead letters
-- [ ] Queue with leases and a fencing token
+- [x] Schema: runs, jobs, steps, idempotency keys, dead letters
+- [x] Queue with leases and a fencing token (11 tests, including a stale-worker case)
 - [ ] Worker loop and heartbeat
 - [ ] Agent loop with checkpoint and replay
 - [ ] Idempotent tool calls
